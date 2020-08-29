@@ -1,0 +1,32 @@
+body{
+    margin:0;
+    padding:0;
+}
+.frame{
+    width: 60vw;
+    height: 100vh;
+}
+
+.cover{
+    width: 60vw;
+    height: 80vh;
+    background: url(../images/bg.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.track{
+    width: 60vw;
+    height: 20vh;
+    background: url(../images/ground.png);
+    background-size: cover;
+    background-repeat: repeat-x;
+}
+
+.bird{
+    height: 100px;
+    width: 100px;
+    background: url(../images/bird.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
