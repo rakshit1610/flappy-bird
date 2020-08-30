@@ -2,17 +2,21 @@ body{
     margin:0;
     padding:0;
 }
+}
 .frame{
     width: 60vw;
     height: 100vh;
+    
 }
 
 .cover{
+    position: relative;
     width: 60vw;
     height: 80vh;
     background: url(../images/bg.png);
     background-size: cover;
     background-repeat: no-repeat;
+    margin: 0 auto;
 }
 
 .track{
@@ -21,11 +25,15 @@ body{
     background: url(../images/ground.png);
     background-size: cover;
     background-repeat: repeat-x;
+    margin: 0 auto;
 }
 
-.bird{
-    height: 100px;
-    width: 100px;
+#bird{
+    position:absolute;
+    left:200px;
+    top:200px;
+    height: 80px;
+    width: 80px;
     background: url(../images/bird.png);
     background-size: cover;
     background-repeat: no-repeat;
