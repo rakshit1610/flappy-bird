@@ -6,7 +6,7 @@ body{
 .frame{
     width: 700px;
     height: 625px;
-    
+
 }
 
 .cover{
@@ -16,7 +16,7 @@ body{
     background: url(../images/bg.png);
     background-size: cover;
     background-repeat: no-repeat;
-    margin: 0 auto;
+
 }
 
 .track{
@@ -25,7 +25,7 @@ body{
     background: url(../images/ground.png);
     background-size: cover;
     background-repeat: repeat-x;
-    margin: 0 auto;
+    
 }
 
 #bird{
