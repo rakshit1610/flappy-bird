@@ -2,17 +2,17 @@ body{
     margin:0;
     padding:0;
 }
-}
+
 .frame{
-    width: 60vw;
-    height: 100vh;
+    width: 700px;
+    height: 625px;
     
 }
 
 .cover{
-    position: relative;
-    width: 60vw;
-    height: 80vh;
+    /* position: relative; */
+    width: 700px;
+    height: 525px;
     background: url(../images/bg.png);
     background-size: cover;
     background-repeat: no-repeat;
@@ -20,8 +20,8 @@ body{
 }
 
 .track{
-    width: 60vw;
-    height: 20vh;
+    width: 700px;
+    height: 100px;
     background: url(../images/ground.png);
     background-size: cover;
     background-repeat: repeat-x;
@@ -35,6 +35,17 @@ body{
     height: 80px;
     width: 80px;
     background: url(../images/bird.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+
+.pipe{
+    background: url(../images/pipe.png);
+    position: absolute;
+    /* background: red; */
+    width: 80px;
+    height: 300px;
     background-size: cover;
     background-repeat: no-repeat;
 }
