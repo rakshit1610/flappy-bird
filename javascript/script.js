@@ -1,51 +1,68 @@
 function start() {
 
   var elem = document.getElementById("bird");   
-  var top =40;
-  
- setInterval(frame, 7);
+  var bottom =400;
+  let gamerunning=1;
+ let timmer=setInterval(frame, 5);
   function frame() {
-    if(top<465){        //adding gravity to bird
-            top++; 
-      elem.style.top = top + "px"; 
-      console.log(top);
-    }
+      if(gamerunning){             //adding gravity to bird
+    bottom--; 
+      elem.style.bottom = bottom + "px"; 
+      }
   }
-  document.addEventListener("click",function (e){
-      if(top>30){
-      top-=100;                                //makes  bird jump
-      elem.style.top = top + "px";
+  document.addEventListener("click",jump)
+  function jump(){
+      if(bottom<510 && gamerunning){
+        console.log(bottom)
+      bottom+=100;                                //makes  bird jump
+      elem.style.bottom = bottom + "px";
       } 
-  });
+  }
 
   function pipeCreator(){
     var pipeLeft= 700;
     var Heightvar= Math.random()*70;
-    var pipeBottom= Heightvar;
+    var pipeBottom= Heightvar;    // creates pipe
     var pipe= document.createElement('div');
     pipe.classList.add('pipe');
     document.querySelector('.frame').appendChild(pipe);
     pipe.style.bottom= pipeBottom + "px";
     pipe.style.left= pipeLeft + "px";
 
-
-    var id= setInterval(movepipe, 10);
+    var pipetimmer= setInterval(movepipe, 10);
 
     function movepipe(){
+      if(gamerunning){
       pipeLeft--;
+      }
       pipe.style.left= pipeLeft + "px";
-
-      if (pipeLeft===-80){
-        clearInterval(id);
+      if (pipeLeft===-80 ){               //move pipe
+        clearInterval(pipetimmer);
         document.querySelector('.frame').removeChild(pipe);
       }
+     
+      if(pipeLeft<275 && pipeLeft>160 && bottom<(285+pipeBottom)||bottom === 78 )   
+       {
+         gameover()                           //bird touches track movement stops or touches pipe(160 and 275 for corner cases)
+      }
+      
+      
     }
 
-    setTimeout(pipeCreator,3500);
+    if(gamerunning!=0)
+    {
+     setTimeout(pipeCreator,3500);
+    }
   }
 
   pipeCreator();
-
+  
+  function gameover()
+     {
+      gamerunning=0;
+      clearInterval(timmer);
+      clearInterval(pipetimmer);
+     }
 
 }
 
