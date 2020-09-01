@@ -47,3 +47,16 @@ body{
     background-size: cover;
     background-repeat: no-repeat;
 }
+
+
+.upperPipe{
+    background: url(../images/pipe.png);
+    position: absolute;
+    transform: rotate(180deg);
+    /* background: red; */
+    width: 80px;
+    height: 300px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    /* top:0; */
+}

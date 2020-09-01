@@ -22,12 +22,19 @@ function start() {
   function pipeCreator(){
     var pipeLeft= 700;
     var Heightvar= Math.random()*70;
-    var pipeBottom= Heightvar;    // creates pipe
+    var pipeBottom= Heightvar;    // creates pipe of random height
     var pipe= document.createElement('div');
+    var upperPipe= document.createElement('div');
     pipe.classList.add('pipe');
-    document.querySelector('.frame').appendChild(pipe);
+    upperPipe.classList.add('upperPipe');
+    if(gamerunning){
+    document.querySelector('.frame').appendChild(pipe);  // a div added as pipe
+    document.querySelector('.frame').appendChild(upperPipe);
+  }
     pipe.style.bottom= pipeBottom + "px";
     pipe.style.left= pipeLeft + "px";
+    upperPipe.style.left= pipeLeft + "px";
+    upperPipe.style.bottom= pipeBottom+ 450 + "px";
 
     var pipetimmer= setInterval(movepipe, 10);
 
@@ -36,14 +43,15 @@ function start() {
       pipeLeft--;
       }
       pipe.style.left= pipeLeft + "px";
-      if (pipeLeft===-80 ){               //move pipe
+      upperPipe.style.left= pipeLeft + "px";
+      if (pipeLeft===-80 ){               //moves pipe towards left
         clearInterval(pipetimmer);
-        document.querySelector('.frame').removeChild(pipe);
+        document.querySelector('.frame').removeChild(pipe);    //pipe div is removed
       }
      
       if(pipeLeft<275 && pipeLeft>160 && bottom<(285+pipeBottom)||bottom === 78 )   
        {
-         gameover()                           //bird touches track movement stops or touches pipe(160 and 275 for corner cases)
+         gameover();         //bird touches track movement stops or touches pipe(160 and 275 for corner cases)
       }
       
       
