@@ -49,7 +49,7 @@ function start() {
         document.querySelector('.frame').removeChild(pipe);    //pipe div is removed
       }
      
-      if(pipeLeft<275 && pipeLeft>160 && bottom<(285+pipeBottom)||bottom === 78 )   
+      if(pipeLeft<275 && pipeLeft>160 && (bottom<(285+pipeBottom)||bottom>pipeBottom+ 450-80)|| bottom === 78 )   
        {
          gameover();         //bird touches track movement stops or touches pipe(160 and 275 for corner cases)
       }
