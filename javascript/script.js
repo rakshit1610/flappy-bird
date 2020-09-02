@@ -3,7 +3,7 @@ function start() {
   var elem = document.getElementById("bird");   
   var bottom =400;
   let gamerunning=1;
- let timmer=setInterval(frame, 5);
+ let timmer=setInterval(frame, 6);
   function frame() {
       if(gamerunning){             //adding gravity to bird
     bottom--; 
@@ -14,14 +14,14 @@ function start() {
   function jump(){
       if(bottom<510 && gamerunning){
         console.log(bottom)
-      bottom+=100;                                //makes  bird jump
+      bottom+=90;                                //makes  bird jump
       elem.style.bottom = bottom + "px";
       } 
   }
 
   function pipeCreator(){
     var pipeLeft= 700;
-    var Heightvar= Math.random()*70;
+    var Heightvar= (-60)+Math.random()*(40-(-60));
     var pipeBottom= Heightvar;    // creates pipe of random height
     var pipe= document.createElement('div');
     var upperPipe= document.createElement('div');
@@ -34,7 +34,7 @@ function start() {
     pipe.style.bottom= pipeBottom + "px";
     pipe.style.left= pipeLeft + "px";
     upperPipe.style.left= pipeLeft + "px";
-    upperPipe.style.bottom= pipeBottom+ 450 + "px";
+    upperPipe.style.bottom= pipeBottom+ 500 + "px";
 
     var pipetimmer= setInterval(movepipe, 10);
 
@@ -49,7 +49,7 @@ function start() {
         document.querySelector('.frame').removeChild(pipe);    //pipe div is removed
       }
      
-      if(pipeLeft<275 && pipeLeft>160 && (bottom<(285+pipeBottom)||bottom>pipeBottom+ 450-80)|| bottom === 78 )   
+      if(pipeLeft<258 && pipeLeft>160 && (bottom<(285+pipeBottom)||bottom>pipeBottom+300+200-64.7)|| bottom === 78 )   
        {
          gameover();         //bird touches track movement stops or touches pipe(160 and 275 for corner cases)
       }
@@ -69,7 +69,7 @@ function start() {
      {
       gamerunning=0;
       clearInterval(timmer);
-      clearInterval(pipetimmer);
+      
      }
 
 }
