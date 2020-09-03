@@ -20,7 +20,7 @@ function start() {
   }
 
   function pipeCreator(){
-    var pipeLeft= 700;
+    var pipeLeft= 1300;
     var Heightvar= (-60)+Math.random()*(40-(-60));
     var pipeBottom= Heightvar;    // creates pipe of random height
     var pipe= document.createElement('div');
@@ -36,7 +36,7 @@ function start() {
     upperPipe.style.left= pipeLeft + "px";
     upperPipe.style.bottom= pipeBottom+ 500 + "px";
 
-    var pipetimmer= setInterval(movepipe, 10);
+    var pipetimmer= setInterval(movepipe, 4);
 
     function movepipe(){
       if(gamerunning){
