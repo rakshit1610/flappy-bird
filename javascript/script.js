@@ -3,6 +3,7 @@ function start() {
   var elem = document.getElementById("bird");   
   var bottom =400;
   let gamerunning=1;
+  document.querySelector('.track').classList.add('trackmove');
  let timmer=setInterval(frame, 6);
   function frame() {
       if(gamerunning){             //adding gravity to bird
@@ -68,6 +69,7 @@ function start() {
   function gameover()
      {
       gamerunning=0;
+      document.querySelector('.track').classList.remove('trackmove');
       clearInterval(timmer);
       
      }

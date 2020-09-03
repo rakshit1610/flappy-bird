@@ -32,6 +32,17 @@ body{
     z-index: 4;
 }
 
+.trackmove{
+    animation: move 1.5s linear infinite;
+}
+
+@keyframes move{
+    100%{
+        transform: translateX(-500px);
+    }
+}
+
+
 #bird{
     position:absolute;
     left:200px;
