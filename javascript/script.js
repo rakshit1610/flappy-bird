@@ -2,6 +2,7 @@ function start() {
 
   var elem = document.getElementById("bird");   
   var bottom =400;
+  var score=0;
   let gamerunning=1;
   document.querySelector('.track').classList.add('trackmove');
  let timmer=setInterval(frame, 6);
@@ -48,8 +49,17 @@ function start() {
       if (pipeLeft===-80 ){               //moves pipe towards left
         clearInterval(pipetimmer);
         document.querySelector('.frame').removeChild(pipe);    //pipe div is removed
+        updateScore();
       }
      
+      function updateScore(){
+      if(pipeLeft<elem.style.left-79){
+        score++;
+        document.getElementById('sc').innerText=score;
+      
+      }
+    }
+
       if(pipeLeft<258 && pipeLeft>160 && (bottom<(285+pipeBottom)||bottom>pipeBottom+300+200-64.7)|| bottom === 78 )   
        {
          gameover();         //bird touches track movement stops or touches pipe(160 and 275 for corner cases)
