@@ -6,6 +6,8 @@ body{
 .frame{
     width: 700px;
     height: 625px;
+    overflow: hidden;
+    position: relative;
 }
 
 .cover{
@@ -19,11 +21,13 @@ body{
 }
 
 .track{
-    width: 700px;
+    position: relative;
+    width: 3000px;
     height: 100px;
     background: url(../images/ground.png);
-    background-size: cover;
     background-repeat: repeat-x;
+    overflow: hidden;
+    z-index: 4;
 }
 
 #bird{
@@ -48,6 +52,7 @@ body{
     background-size: cover;
     background-repeat: no-repeat;
     z-index: 1;
+    overflow: hidden;
 }
 
 
