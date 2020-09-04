@@ -4,6 +4,32 @@ body{
     overflow: hidden;
 }
 
+.endscreen{
+    position: relative;
+    font-family: sans-serif;
+    z-index: 100;
+    display: none;
+    /* background: #fa8f03; */
+    background: url(../images/finalback.png);
+    background-size: cover;
+    font-size: 100px;
+    color: white;
+    text-align: center;
+    width: 100vw;
+    height: 100vh;
+    line-height: 150px;
+}
+
+.btn{
+    width: 250px;
+    height: 50px;
+    font-size: 30px;
+    background: #fa8f03; 
+    color: white;
+    border: 2px solid white;
+}
+
+
 p{
     margin:0;
     padding:0;

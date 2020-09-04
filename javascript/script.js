@@ -81,8 +81,13 @@ function start() {
       gamerunning=0;
       document.querySelector('.track').classList.remove('trackmove');
       clearInterval(timmer);
-      
+      document.querySelector('.endscreen').style.display="block";
+      document.querySelector('#sc').style.display="none";
+      document.querySelector('.final').innerText=score;
+      document.querySelector('.btn').addEventListener('click',()=>{
+        window.location.reload();
+       })
      }
-
+     
 }
 
