@@ -42,7 +42,15 @@ function start() {
 
     function movepipe(){
       if(gamerunning){
-      pipeLeft--;
+      if(score>=20){
+        pipeLeft-=2.5;
+      }
+      else if(score>=10){
+        pipeLeft-=2;
+      }
+      else{
+      pipeLeft-=1.5;
+      }
       }
       pipe.style.left= pipeLeft + "px";
       upperPipe.style.left= pipeLeft + "px";
@@ -70,7 +78,18 @@ function start() {
 
     if(gamerunning!=0)
     {
-     setTimeout(pipeCreator,3500);
+     
+
+
+     if(score>=20){
+      setTimeout(pipeCreator,1800);
+    }
+    else if(score>=10){
+      setTimeout(pipeCreator,1800);
+    }
+    else{
+      setTimeout(pipeCreator,2500);
+    }
     }
   }
 
@@ -81,12 +100,18 @@ function start() {
       gamerunning=0;
       document.querySelector('.track').classList.remove('trackmove');
       clearInterval(timmer);
+
+
+      window.setTimeout(()=>{
       document.querySelector('.endscreen').style.display="block";
       document.querySelector('#sc').style.display="none";
       document.querySelector('.final').innerText=score;
+      
+      },500)
+    
       document.querySelector('.btn').addEventListener('click',()=>{
         window.location.reload();
-       })
+         })
      }
      
 }

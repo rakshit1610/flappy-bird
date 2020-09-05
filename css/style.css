@@ -24,9 +24,9 @@ body{
     width: 250px;
     height: 50px;
     font-size: 30px;
-    background: #fa8f03; 
-    color: white;
-    border: 2px solid white;
+    background: #fa8f03;
+    background-size: auto;
+    color: black;
 }
 
 
