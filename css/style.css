@@ -47,6 +47,19 @@ p{
     position: relative;
 }
 
+.flame{
+    background: url(../images/flame.png);
+    transform: rotate(90deg);
+    position: absolute;
+    z-index: 2;
+    /* background: red; */
+    width: 85px;
+    height: 140px;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+
 .cover{
     width: 1400px;
     height: 525px;
