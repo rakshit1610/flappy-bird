@@ -4,6 +4,7 @@ function start() {
   var bottom =400;
   var score=0;
   let gamerunning=1;
+  let p=0;
   document.querySelector('.track').classList.add('trackmove');
  let timmer=setInterval(frame, 6);
   function frame() {
@@ -15,9 +16,10 @@ function start() {
   document.addEventListener("click",jump)
   function jump(){
       if(bottom<510 && gamerunning){
-        console.log(bottom)
-      bottom+=90;                                //makes  bird jump
+      bottom+=90;                    //makes  bird jump
       elem.style.bottom = bottom + "px";
+      let audio=document.getElementById("jump");
+      audio.play();
       } 
   }
 
@@ -92,6 +94,8 @@ function start() {
       function updateScore(){
       if(pipeLeft<elem.style.left-79){
         score++;
+        let audio = document.getElementById("point");
+        audio.play();
         document.getElementById('sc').innerText=score;
       
       }
@@ -99,6 +103,7 @@ function start() {
 
       if(pipeLeft<258 && pipeLeft>160 && (bottom<(285+pipeBottom)||bottom>pipeBottom+300+200-64.7)|| bottom === 78 || (flameleft<200 && flameleft>150)&&(bottom>flamebottom)&&bottom<flamebottom+85 )   
        {
+        
          gameover();         //bird touches track movement stops or touches pipe(160 and 275 for corner cases)
       }
       
@@ -128,20 +133,28 @@ function start() {
   
   function gameover()
      {
+       
       gamerunning=0;
       document.querySelector('.track').classList.remove('trackmove');
       clearInterval(timmer);
-
-
+     
       window.setTimeout(()=>{
       document.querySelector('.endscreen').style.display="block";
       document.querySelector('#sc').style.display="none";
       document.querySelector('.final').innerText=score;
       
       },500)
+       
+        let audio=document.getElementById("hit");
+        if(p===0)
+        {
+          audio.play();
+          p=1;
+        }
     
       document.querySelector('.btn').addEventListener('click',()=>{
         window.location.reload();
+    
          })
      }
      
