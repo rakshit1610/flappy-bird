@@ -39,14 +39,14 @@ font-size: 35px;
 text-align:justify;
 }
 
-.btn{
+/* .btn{
     width: 250px;
     height: 50px;
     font-size: 30px;
     background: #fa8f03;
     background-size: auto;
     color: black;
-}
+} */
 
 
 p{
@@ -169,13 +169,12 @@ background-size: cover;
    
 }
 
-.click{
+.btn, .click{
     border-radius: 4px;
     background: linear-gradient( rgb(254,251,214),#67b26b) !important;
     border: none;
-    color: #FFFFFF;
+    color: black;
     text-align: center;
-   
     font-size: 22px;
     padding: 20px;
     width: 200px;
@@ -183,11 +182,12 @@ background-size: cover;
     cursor: pointer;
     margin: 10px;
     box-shadow: 4px 4px 0px 0px black;
-    text-shadow: 0px 0px 3px black;
+    text-shadow: 0px 0px 3px white;
 }
 
-.click:hover{
-    text-shadow: 0px 0px 10px black;
+.click:hover, .btn:hover{
+    text-shadow: 0px 0px 10px white;
     box-shadow:2px 1px 0px 0px black ;
-transition: all 0.4s ease 0s;
+    font-weight: 600;
+    transition: all 0.4s ease 0s;
 }
